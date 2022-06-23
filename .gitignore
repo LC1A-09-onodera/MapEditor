@@ -9,7 +9,7 @@ x64/
 *.o
 *.obj
 
-!/Resource/.obj
+!/Resource/*.obj
 
 # Precompiled Headers
 *.gch
