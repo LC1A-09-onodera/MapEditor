@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{ddf6894a-bbbb-444a-9fbb-ceb6ecf5d8ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3DModel">
+      <UniqueIdentifier>{466bad64-9ecf-4970-b2aa-09460b83b772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{a5680743-048d-4d6d-be15-674d1dbaf249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collition">
+      <UniqueIdentifier>{96988a27-66e6-4b57-8a00-55c8bf070939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{2f57b39f-ad77-47cc-a379-35737c3781f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{4f96405b-e741-4b2d-a906-c6deca9b03f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseDirectx">
+      <UniqueIdentifier>{0ebdf476-7d42-4a3f-b421-7f3126d21af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{de4aa46d-f4fb-4bc0-8cb2-e4e508e71808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowsAPI">
+      <UniqueIdentifier>{785e0331-017b-4c6c-8dfd-bf4d2ebe2442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{bd98f04e-0b12-49dc-b1df-b2fa29f616b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{f69d0092-efa2-4e68-a079-6e8094f66914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Light">
+      <UniqueIdentifier>{77d9c602-f10b-4bf4-b3b2-185887a64e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderTarget">
+      <UniqueIdentifier>{bf3aee4f-016b-4de7-b522-ee19823e25ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PostEffect">
+      <UniqueIdentifier>{0e8de67c-36b1-49b0-bb39-f1eb30b4e887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FbxLoader">
+      <UniqueIdentifier>{f80cfa74-20f5-4917-b266-eb409b21c011}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FBXModel">
+      <UniqueIdentifier>{53b5380a-6f78-4a4d-8eaa-cd2f224333d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FBXObject">
+      <UniqueIdentifier>{42f49b83-7441-4844-91b1-7edbc86de1d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Udp">
+      <UniqueIdentifier>{b2353c99-8890-443e-8f79-5250e75bba10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectParticle">
+      <UniqueIdentifier>{2dadbc1d-a189-461b-ba54-2171fe6f6edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapLayout">
+      <UniqueIdentifier>{bad7b38e-5e11-4946-825b-98d721115e98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx12.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\GameScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\BaseCollision.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\CollisionAttribute.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\CollisionInfo.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\CollisionPrimitive.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\CollistionType.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite\Sprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite\SpriteCommon.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\Texture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\BaseDirectX.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\Input.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\ResouceBarrier.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\vec2.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\vec3.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\viewport.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsAPI\WinAPI.h">
+      <Filter>WindowsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\ImguiControl.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\Shader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="3DModel\Model.h">
+      <Filter>3DModel</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\DirectInput.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="DX12operator.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="Light\Light.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Light\SpotLight.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Light\CircleShadow.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget\RenderTarget.h">
+      <Filter>RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\Matrix4.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\Quaternion.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\SphereCollider.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\CollisionManager.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\RaycastHit.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="Collition\MeshCollider.h">
+      <Filter>Collition</Filter>
+    </ClInclude>
+    <ClInclude Include="PostEffect\PostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="FBXModel\FBXModel.h">
+      <Filter>FBXModel</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxLoader\FbxLoader.h">
+      <Filter>FbxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="FBXObject\FBXObject.h">
+      <Filter>FBXObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\ShaderManager.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="VoiceUDPRecive\VoiceUDPRecive.h">
+      <Filter>Udp</Filter>
+    </ClInclude>
+    <ClInclude Include="VoiceUDPRecive\VoiceUDPSender.h">
+      <Filter>Udp</Filter>
+    </ClInclude>
+    <ClInclude Include="IpAddress\IpAddress.h">
+      <Filter>Udp</Filter>
+    </ClInclude>
+    <ClInclude Include="3DObjectParticle\3DObjectParticle.h">
+      <Filter>ObjectParticle</Filter>
+    </ClInclude>
+    <ClInclude Include="Rewired\Rewired.h">
+      <Filter>BaseDirectx</Filter>
+    </ClInclude>
+    <ClInclude Include="MapLayout\MapLayout.h">
+      <Filter>MapLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\udp.h">
+      <Filter>Udp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx12.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\GameScene.cpp">
+      <Filter>GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Collition\CollisionPrimitive.cpp">
+      <Filter>Collition</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite\Sprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite\SpriteCommon.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\Texture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\BaseDirectX.cpp">
+      <Filter>BaseDirectx</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsAPI\WinAPI.cpp">
+      <Filter>WindowsAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\ImguiControl.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\Shader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="3DModel\Model.cpp">
+      <Filter>3DModel</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\Input.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\DirectInput.cpp">
+      <Filter>BaseDirectx</Filter>
+    </ClCompile>
+    <ClCompile Include="Light\Light.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\Matrix4.cpp">
+      <Filter>BaseDirectx</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDirectX\Quaternion.cpp">
+      <Filter>BaseDirectx</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget\RenderTarget.cpp">
+      <Filter>RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="Collition\CollisionManager.cpp">
+      <Filter>Collition</Filter>
+    </ClCompile>
+    <ClCompile Include="Collition\SphereCollider.cpp">
+      <Filter>Collition</Filter>
+    </ClCompile>
+    <ClCompile Include="Collition\MeshCollider.cpp">
+      <Filter>Collition</Filter>
+    </ClCompile>
+    <ClCompile Include="PostEffect\PostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="FBXModel\FBXModel.cpp">
+      <Filter>FBXModel</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxLoader\FbxLoader.cpp">
+      <Filter>FbxLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="FBXObject\FBXObject.cpp">
+      <Filter>FBXObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\ShaderManager.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="VoiceUDPRecive\VoiceUDPRecive.cpp">
+      <Filter>Udp</Filter>
+    </ClCompile>
+    <ClCompile Include="VoiceUDPRecive\VoiceUDPSender.cpp">
+      <Filter>Udp</Filter>
+    </ClCompile>
+    <ClCompile Include="IpAddress\IpAddress.cpp">
+      <Filter>Udp</Filter>
+    </ClCompile>
+    <ClCompile Include="3DObjectParticle\3DObjectParitcle.cpp">
+      <Filter>ObjectParticle</Filter>
+    </ClCompile>
+    <ClCompile Include="Rewired\Rewired.cpp">
+      <Filter>BaseDirectx</Filter>
+    </ClCompile>
+    <ClCompile Include="MapLayout\MapLayout.cpp">
+      <Filter>MapLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\udp.cpp">
+      <Filter>Udp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Resource\HLSL\OBJPixelShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\OBJVertexShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\PixelShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\SpritePixelShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\SpriteVertexShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\VertexShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\GeometryPixelShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\GeometryVertexShader.hlsl" />
+    <FxCompile Include="Resource\HLSL\ParticleGS.hlsl" />
+    <FxCompile Include="Resource\HLSL\ParticlePS.hlsl" />
+    <FxCompile Include="Resource\HLSL\ParticleVS.hlsl" />
+    <FxCompile Include="Resource\HLSL\WireFramePS.hlsl" />
+    <FxCompile Include="Resource\HLSL\WireFrameVS.hlsl" />
+    <FxCompile Include="Resource\HLSL\WireFrameGS.hlsl" />
+    <FxCompile Include="Resource\HLSL\peraPixel.hlsl" />
+    <FxCompile Include="Resource\HLSL\peraVertex.hlsl" />
+    <FxCompile Include="Resource\HLSL\PostEffectTestPS.hlsl" />
+    <FxCompile Include="Resource\HLSL\PostEffectTestVS.hlsl" />
+    <FxCompile Include="Resource\HLSL\FBXPS.hlsl" />
+    <FxCompile Include="Resource\HLSL\FBXVS.hlsl" />
+    <FxCompile Include="Resource\HLSL\OBJHS.hlsl" />
+    <FxCompile Include="Resource\HLSL\SamplePS.hlsl" />
+    <FxCompile Include="Resource\HLSL\SampleVS.hlsl" />
+    <FxCompile Include="Resource\HLSL\PostBlurPS.hlsl" />
+    <FxCompile Include="Resource\HLSL\PostMosaicPS.hlsl" />
+    <FxCompile Include="Resource\HLSL\PostWaterPS.hlsl" />
+    <FxCompile Include="Resource\HLSL\WaterSamplePS.hlsl" />
+    <FxCompile Include="Resource\HLSL\NormalPlane.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\HLSL\BSH.hlsli" />
+    <None Include="Resource\HLSL\OBJHeader.hlsli" />
+    <None Include="Resource\HLSL\SpriteshaderHeader.hlsli" />
+    <None Include="Resource\HLSL\GeometryHeader.hlsli" />
+    <None Include="Resource\HLSL\Particle.hlsli" />
+    <None Include="Resource\HLSL\peraHeader.hlsli" />
+    <None Include="Resource\HLSL\PostEffectTest.hlsli" />
+    <None Include="Resource\HLSL\FBX.hlsli" />
+    <None Include="Resource\HLSL\Sample.hlsli" />
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
