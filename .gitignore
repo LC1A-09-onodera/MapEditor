@@ -2,6 +2,7 @@
 *.d
 
 x64/
+.vs/
 
 # Compiled Object files
 *.slo
@@ -9,7 +10,7 @@ x64/
 *.o
 *.obj
 
-!/Resource/
+!/Resource/Model/*.obj
 
 # Precompiled Headers
 *.gch
