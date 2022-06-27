@@ -3,6 +3,8 @@
 
 /x64
 /DirectXTex/Bin/Desktop_2019_Win10/x64
+
+
 .vs/
 
 # Compiled Object files
@@ -44,3 +46,5 @@
 *.exe
 *.out
 *.app
+
+!/packages/Microsoft.CognitiveServices.Speech.1.21.0/build/native/x64/Release/Microsoft.CognitiveServices.Speech.core.lib
