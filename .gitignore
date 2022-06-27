@@ -10,6 +10,14 @@ x64/
 *.o
 *.obj
 
+# obj
+!Resource/Model/Map/Map.obj
+!Resource/Model/MapEnemy/MapEnemy.obj
+!Resource/Model/MapGoal/MapGoal.obj
+!Resource/Model/MapM/MapM.obj
+!Resource/Model/MapWall/MapWall.obj
+!Resource/Model/maru/maru.obj
+
 !/Resource/Model/*.obj
 
 # Precompiled Headers
