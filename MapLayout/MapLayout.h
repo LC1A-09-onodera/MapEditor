@@ -49,13 +49,13 @@ class MapEditorObjects
 	static list<MapEditorObject> wall;
 	static list<MapEditorObject> goal;
 	static list<MapEditorObject> enemy;
-	static list<list<MapEditorObject>::iterator> wallDeleteItr;
-	static list<list<MapEditorObject>::iterator> goalDeleteItr;
-	static list<list<MapEditorObject>::iterator> enemyDeleteItr;
 
 	static Model wallModel;
 	static Model goalModel;
 	static Model enemyModel;
+
+	static XMFLOAT3 lineMousePos;
+	static bool isLinePut;
 
 	
 public:
@@ -65,6 +65,7 @@ public:
 	static void Update(XMFLOAT3 &mousePos);
 	static void Draw();
 	static void SetObject(XMFLOAT3 &position);
+	static void SetObjectLine(XMFLOAT3& position);
 	static bool ObjectCollision(XMFLOAT3& mousePos);
 	static void EraseObject();
 	static void OutputFile();

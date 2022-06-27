@@ -308,7 +308,7 @@ static float Lenght(XMVECTOR position1, XMVECTOR position2)
 	leng.x = position1.m128_f32[0] - position2.m128_f32[0];
 	leng.y = position1.m128_f32[1] - position2.m128_f32[1];
 	leng.z = position1.m128_f32[2] - position2.m128_f32[2];
-	result = sqrtf((leng.x * leng.x) + (leng.y + leng.y) + (leng.z * leng.z));
+	result = sqrtf((leng.x * leng.x) + (leng.y * leng.y) + (leng.z * leng.z));
 	return result;
 }
 
@@ -319,7 +319,7 @@ static float Lenght(XMFLOAT3 position1, XMFLOAT3 position2)
 	leng.x = position1.x - position2.x;
 	leng.y = position1.y - position2.y;
 	leng.z = position1.z - position2.z;
-	result = sqrtf((leng.x * leng.x) + (leng.y + leng.y) + (leng.z * leng.z));
+	result = sqrtf((leng.x * leng.x) + (leng.y * leng.y) + (leng.z * leng.z));
 	return result;
 }
 
@@ -330,7 +330,7 @@ static float Lenght(XMVECTOR position1, XMFLOAT3 position2)
 	leng.x = position1.m128_f32[0] - position2.x;
 	leng.y = position1.m128_f32[1] - position2.y;
 	leng.z = position1.m128_f32[2] - position2.z;
-	result = sqrtf((leng.x * leng.x) + (leng.y + leng.y) + (leng.z * leng.z));
+	result = sqrtf((leng.x * leng.x) + (leng.y * leng.y) + (leng.z * leng.z));
 	return result;
 }
 
@@ -341,7 +341,7 @@ static float Lenght(XMFLOAT3 &v)
 	leng.x = v.x;
 	leng.y = v.y;
 	leng.z = v.z;
-	result = sqrtf((leng.x * leng.x) + (leng.y + leng.y) + (leng.z * leng.z));
+	result = sqrtf((leng.x * leng.x) + (leng.y * leng.y) + (leng.z * leng.z));
 	return result;
 }
 
