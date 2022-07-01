@@ -59,10 +59,11 @@ public://ÉVÅ[ÉìÇ≈égÇ§Ç‡ÇÃ
 
 	PostEffect postWater;
 	PostEffect postMosaic;
-	Model sample;
+
 	Model mapFrameV;
 	Model mapFrameH;
 	Model player;
+
 	EachInfo playerPos;
 	EachInfo rPlayerPos;
 

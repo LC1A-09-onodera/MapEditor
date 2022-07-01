@@ -13,22 +13,22 @@ string MapObjectNames::enemy = "enemy";
 list<MapEditorObject> MapEditorObjects::wall;
 list<MapEditorObject> MapEditorObjects::goal;
 list<MapEditorObject> MapEditorObjects::enemy;
-list<list<MapEditorObject>::iterator> MapEditorObjects::wallDeleteItr;
-list<list<MapEditorObject>::iterator> MapEditorObjects::goalDeleteItr;
-list<list<MapEditorObject>::iterator> MapEditorObjects::enemyDeleteItr;
 
 Model MapEditorObjects::wallModel;
 Model MapEditorObjects::goalModel;
 Model MapEditorObjects::enemyModel;
 MapObjects MapEditorObjects::activeType;
 
+XMFLOAT3 MapEditorObjects::lineMousePos;
+bool MapEditorObjects::isLinePut;
 bool MapEditorObject::OnCollisionMouse(float posX, float posY)
 {
+	const float mapObjectR = 0.53f;
 	XMFLOAT3 pos;
 	pos.x = posX;
 	pos.y = posY;
 	pos.z = 0.0f;
-	if (Lenght(piece.position, pos) < 0.95f)
+	if (Lenght(piece.position, pos) < mapObjectR)
 	{
 		return true;
 	}
@@ -87,14 +87,19 @@ void MapEditorObjects::Update(XMFLOAT3& mousePos)
 	}
 	if (Input::MouseTrigger(MouseButton::LBUTTON))
 	{
-		if (ObjectCollision(mousePos))
-		{
-			EraseObject();
-		}
-		else
+		isLinePut = true;
+		if (!ObjectCollision(mousePos))
 		{
 			SetObject(mousePos);
 		}
+	}
+	else if (!Input::Mouse(MouseButton::LBUTTON))
+	{
+		isLinePut = false;
+	}
+	if (!Input::MouseTrigger(MouseButton::LBUTTON) && Input::Mouse(MouseButton::LBUTTON) && isLinePut)
+	{
+		SetObjectLine(mousePos);
 	}
 	if (Input::Key(DIK_A) && Input::Key(DIK_L))
 	{
@@ -142,6 +147,7 @@ void MapEditorObjects::SetObject(XMFLOAT3& position)
 	}
 	MapEditorObject object;
 	object.Init(position);
+	lineMousePos = position;
 	if (activeType == MapObjects::WALL)
 	{
 		MapEditorObjects::wall.push_back(object);
@@ -156,13 +162,40 @@ void MapEditorObjects::SetObject(XMFLOAT3& position)
 	}
 }
 
+void MapEditorObjects::SetObjectLine(XMFLOAT3& position)
+{
+	const float MapObjectR = 1.0f;
+	if (lineMousePos.x + MapObjectR < position.x)
+	{
+		lineMousePos.x = lineMousePos.x + MapObjectR;
+	}
+	else if (lineMousePos.x - MapObjectR > position.x)
+	{
+		lineMousePos.x = lineMousePos.x - MapObjectR;
+	}
+	else if (lineMousePos.y + MapObjectR < position.y)
+	{
+		lineMousePos.y = lineMousePos.y + MapObjectR;
+	}
+	else if (lineMousePos.y - MapObjectR > position.y)
+	{
+		lineMousePos.y = lineMousePos.y - MapObjectR;
+	}
+	else
+	{
+		return;
+	}
+	SetObject(lineMousePos);
+}
+
 bool MapEditorObjects::ObjectCollision(XMFLOAT3& mousePos)
 {
 	for (auto itr = wall.begin(); itr != wall.end(); ++itr)
 	{
 		if (itr->OnCollisionMouse(mousePos.x, mousePos.y))
 		{
-			wallDeleteItr.push_back(itr);
+			wall.erase(itr);
+			lineMousePos = mousePos;
 			return true;
 		}
 	}
@@ -170,7 +203,8 @@ bool MapEditorObjects::ObjectCollision(XMFLOAT3& mousePos)
 	{
 		if (itr->OnCollisionMouse(mousePos.x, mousePos.y))
 		{
-			goalDeleteItr.push_back(itr);
+			goal.erase(itr);
+			lineMousePos = mousePos;
 			return true;
 		}
 	}
@@ -178,35 +212,17 @@ bool MapEditorObjects::ObjectCollision(XMFLOAT3& mousePos)
 	{
 		if (itr->OnCollisionMouse(mousePos.x, mousePos.y))
 		{
-			enemyDeleteItr.push_back(itr);
+			enemy.erase(itr);
+			lineMousePos = mousePos;
 			return true;
 		}
 	}
 	return false;
 }
 
-void MapEditorObjects::EraseObject()
-{
-	for (auto itr = wallDeleteItr.begin(); itr != wallDeleteItr.end(); ++itr)
-	{
-		wall.erase(*itr);
-	}
-	for (auto itr = goalDeleteItr.begin(); itr != goalDeleteItr.end(); ++itr)
-	{
-		goal.erase(*itr);
-	}
-	for (auto itr = enemyDeleteItr.begin(); itr != enemyDeleteItr.end(); ++itr)
-	{
-		enemy.erase(*itr);
-	}
-	wallDeleteItr.clear();
-	goalDeleteItr.clear();
-	enemyDeleteItr.clear();
-}
-
 void MapEditorObjects::OutputFile()
 {
-	string fileName = "test.txt";
+	string fileName = "stage1.txt";
 	ofstream ofs(fileName);
 	if (!ofs) return;
 	//ofs << "wall" << std::endl;
@@ -219,7 +235,7 @@ void MapEditorObjects::OutputFile()
 	{
 		ofs << "goal " + itr->PositionToString() << std::endl;
 	}
-	
+
 	for (auto itr = enemy.begin(); itr != enemy.end(); ++itr)
 	{
 		ofs << "enemy " + itr->PositionToString() << std::endl;

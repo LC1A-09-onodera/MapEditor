@@ -165,9 +165,6 @@
     <ClInclude Include="BaseDirectX\DirectInput.h">
       <Filter>BaseDirectx</Filter>
     </ClInclude>
-    <ClInclude Include="DX12operator.h">
-      <Filter>BaseDirectx</Filter>
-    </ClInclude>
     <ClInclude Include="Light\Light.h">
       <Filter>Light</Filter>
     </ClInclude>
@@ -236,6 +233,9 @@
     </ClInclude>
     <ClInclude Include="UDP\udp.h">
       <Filter>Udp</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDirectX\DX12operator.h">
+      <Filter>BaseDirectx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

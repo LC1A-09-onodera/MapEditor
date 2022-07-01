@@ -23,6 +23,8 @@ float Imgui::CameraHigh = 0.2f;
 bool Imgui::CameraControl = false;
 int Imgui::useWaterNum = 0;
 int Imgui::mouseWheel;
+bool Imgui::touchedImgui = false;
+
 ComPtr<ID3D12DescriptorHeap> Imgui::CreateDescrriptorHeapForImgui()
 {
     ComPtr<ID3D12DescriptorHeap> ret;
@@ -48,8 +50,10 @@ void Imgui::DrawImGui()
     ImGui::NewFrame();
     ImGui::Begin("InfomationAndEdit", nullptr, ImGuiWindowFlags_MenuBar);//ウィンドウの名前
     ImGui::SetWindowSize(ImVec2(400, 500), ImGuiCond_::ImGuiCond_FirstUseEver);
+
     CreateMenuBar();
     EachInfo();
+
     ImGui::End();
     ImGui::Render();
     BaseDirectX::cmdList->SetDescriptorHeaps(1, GetHeapForImgui().GetAddressOf());
@@ -162,6 +166,7 @@ void Imgui::EachInfo()
         if (ImGui::Button("OutputFile"))
         {
             MapEditorObjects::OutputFile();
+            touchedImgui = true;
         }
         ImGui::Text("");
         ImGui::Text("1:WALL, 2:GOAL, 3:ENEMY, 0:NONE");
@@ -186,6 +191,7 @@ void Imgui::EachInfo()
         if (ImGui::Button("DeleteObjects"))
         {
             MapEditorObjects::DeleteObjects();
+            touchedImgui = true;
         }
 
     }

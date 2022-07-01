@@ -81,4 +81,6 @@ public:
     static int useWaterNum;
 
     static int mouseWheel;
+
+    static bool touchedImgui;
 };

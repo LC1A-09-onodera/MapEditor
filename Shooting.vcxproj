@@ -162,6 +162,7 @@
     <ClInclude Include="3DObjectParticle\3DObjectParticle.h" />
     <ClInclude Include="BaseDirectX\BaseDirectX.h" />
     <ClInclude Include="BaseDirectX\DirectInput.h" />
+    <ClInclude Include="BaseDirectX\DX12operator.h" />
     <ClInclude Include="BaseDirectX\GameScene.h" />
     <ClInclude Include="BaseDirectX\Input.h" />
     <ClInclude Include="BaseDirectX\Matrix4.h" />
@@ -180,7 +181,6 @@
     <ClInclude Include="Collition\MeshCollider.h" />
     <ClInclude Include="Collition\RaycastHit.h" />
     <ClInclude Include="Collition\SphereCollider.h" />
-    <ClInclude Include="DX12operator.h" />
     <ClInclude Include="FbxLoader\FbxLoader.h" />
     <ClInclude Include="FBXModel\FBXModel.h" />
     <ClInclude Include="FBXObject\FBXObject.h" />

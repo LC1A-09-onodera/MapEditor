@@ -19,7 +19,7 @@ GameScene::GameScene()
 GameScene::~GameScene()
 {
 	VoiceReciver::EndRecive();
-	
+
 }
 
 void GameScene::SceneManageUpdateAndDraw()
@@ -80,9 +80,9 @@ void GameScene::Init()
 	//インプット初期化
 	Input::KeySet(WindowsAPI::w, WindowsAPI::hwnd);
 	//FBX系
-	FbxLoader::GetInstance()->Initialize(BaseDirectX::dev.Get());
+	/*FbxLoader::GetInstance()->Initialize(BaseDirectX::dev.Get());
 	FBXObject::SetDevice(BaseDirectX::dev.Get());
-	FBXObject::CreateGraphicsPipeline();
+	FBXObject::CreateGraphicsPipeline();*/
 	//ライト初期化
 	light.reset(Light::Create());
 	//モデルすべてにライトを適用
@@ -90,8 +90,6 @@ void GameScene::Init()
 	//ポストエフェクトの初期化
 	PostEffects::Init();
 	MapEditorObjects::loadModels();
-	sample.CreateModel("maru", ShaderManager::playerShader);
-	sample.each.scale = {0.1f, 0.1f, 0.1f};
 	mapFrameV.CreateModel("Map", ShaderManager::playerShader, false, false);
 	mapFrameH.CreateModel("Map", ShaderManager::playerShader, false, false);
 	mapFrameV.each.rotation.x = 90.0f;
@@ -104,15 +102,20 @@ void GameScene::Init()
 
 void GameScene::TitleUpdate()
 {
-	XMFLOAT3 mousePos = Cameras::camera.MousePosition(0.0f);
-	sample.each.position = ConvertXMFLOAT3toXMVECTOR(mousePos);
-	sample.each.position.m128_f32[0] -= Cameras::camera.mouseMoveAmount[0];
-	sample.each.position.m128_f32[1] -= Cameras::camera.mouseMoveAmount[1];
-	sample.Update();
+
 	light->SetLightDir(XMFLOAT3(Cameras::camera.GetTargetDirection()));
 	mapFrameV.Update();
 	mapFrameH.Update();
-	MapEditorObjects::Update(XMFLOAT3(mousePos.x - Cameras::camera.mouseMoveAmount[0], mousePos.y - Cameras::camera.mouseMoveAmount[1], mousePos.z));
+
+	//deleteした後のオブジェクトを描画しようとしてエラーを出さないための応急処置
+	//Update段階でオブジェクトをなくしたい
+	Imgui::DrawImGui();
+	XMFLOAT3 mousePos = Cameras::camera.MousePosition(0.0f);
+	if (!Imgui::touchedImgui)
+	{
+		MapEditorObjects::Update(XMFLOAT3(mousePos.x - Cameras::camera.mouseMoveAmount[0], mousePos.y - Cameras::camera.mouseMoveAmount[1], mousePos.z));
+	}
+	Imgui::touchedImgui = false;
 	LightUpdate();
 	Cameras::camera.MouseWheelY();
 	Cameras::camera.MouseRightPushMove();
@@ -141,9 +144,7 @@ void GameScene::EndUpdate()
 
 void GameScene::TitleDraw()
 {
-	BaseDirectX::UpdateFront();
-
-	Draw3DObject(sample);
+	BaseDirectX::UpdateFront();	
 	Draw3DObject(mapFrameV, false);
 	Draw3DObject(mapFrameH, false);
 	player.Update();
@@ -157,40 +158,21 @@ void GameScene::TitleDraw()
 void GameScene::SelectDraw()
 {
 
-	BaseDirectX::UpdateFront();
-
-	Imgui::DrawImGui();
-	//描画コマンドここまで
-	BaseDirectX::UpdateBack();
 }
 
 void GameScene::GameDraw()
 {
 
-	BaseDirectX::UpdateFront();
-
-	Imgui::DrawImGui();
-	//描画コマンドここまで
-	BaseDirectX::UpdateBack();
 }
 
 void GameScene::ResultDraw()
 {
-	BaseDirectX::UpdateFront();
 
-	//PostEffectのDraw
-	Imgui::DrawImGui();
-	//描画コマンドここまで
-	BaseDirectX::UpdateBack();
 }
 
 void GameScene::EndDraw()
 {
-	BaseDirectX::UpdateFront();
 
-	Imgui::DrawImGui();
-	//描画コマンドここまで
-	BaseDirectX::UpdateBack();
 }
 
 void GameScene::LightUpdate()
