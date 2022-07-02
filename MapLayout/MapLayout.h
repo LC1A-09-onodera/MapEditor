@@ -59,6 +59,8 @@ class MapEditorObjects
 
 
 public:
+	static const int MapW;
+	static const int MapH;
 	static MapObjects activeType;
 	static void loadModels();
 	static void LoadFile(string path);
@@ -67,7 +69,6 @@ public:
 	static void SetObject(XMFLOAT3& position);
 	static void SetObjectLine(XMFLOAT3& position);
 	static bool ObjectCollision(XMFLOAT3& mousePos);
-	static void EraseObject();
 	static void OutputFile();
 	static void DeleteObjects();
 };

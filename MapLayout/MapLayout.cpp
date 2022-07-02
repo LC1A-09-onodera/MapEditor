@@ -21,6 +21,8 @@ MapObjects MapEditorObjects::activeType;
 
 XMFLOAT3 MapEditorObjects::lineMousePos;
 bool MapEditorObjects::isLinePut;
+const int MapEditorObjects::MapW = 25;
+const int MapEditorObjects::MapH = 25;
 bool MapEditorObject::OnCollisionMouse(float posX, float posY)
 {
 	const float mapObjectR = 0.53f;
@@ -133,7 +135,7 @@ void MapEditorObjects::Draw()
 
 void MapEditorObjects::SetObject(XMFLOAT3& position)
 {
-	if (position.x > 25.0f || position.x < -25.0f || position.y > 25.0f || position.y < -25.0f)
+	if (position.x > MapW || position.x < -MapW || position.y > MapH || position.y < -MapH)
 	{
 		return;
 	}
@@ -164,6 +166,10 @@ void MapEditorObjects::SetObject(XMFLOAT3& position)
 
 void MapEditorObjects::SetObjectLine(XMFLOAT3& position)
 {
+	if (position.x > MapW || position.x < -MapW || position.y > MapH || position.y < -MapH)
+	{
+		return;
+	}
 	const float MapObjectR = 1.0f;
 	if (lineMousePos.x + MapObjectR < position.x)
 	{
