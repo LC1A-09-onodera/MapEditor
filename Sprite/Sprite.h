@@ -6,10 +6,16 @@
 #include <dxgi1_6.h>
 #include <DirectXMath.h>
 #include <d3dcompiler.h>
+#pragma warning(push)
+#pragma warning(disable:26812)
 #include <DirectXTex.h>
+#pragma warning(pop)
 #include "../BaseDirectX/Input.h"
 #include <wrl.h>
+#pragma warning(push)
+#pragma warning(disable:6001)
 #include <d3dx12.h>
+#pragma warning(pop)
 #include "../BaseDirectX/BaseDirectX.h"
 #include "SpriteCommon.h"
 #include "../Texture/Texture.h"

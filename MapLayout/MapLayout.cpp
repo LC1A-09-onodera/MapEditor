@@ -79,10 +79,10 @@ void MapEditorObjects::Update(XMFLOAT3& mousePos)
 	{
 		activeType = MapObjects::GOAL;
 	}
-	if (Input::KeyTrigger(DIK_3))
+	/*if (Input::KeyTrigger(DIK_3))
 	{
 		activeType = MapObjects::ENEMY;
-	}
+	}*/
 	if (Input::KeyTrigger(DIK_0))
 	{
 		activeType = MapObjects::NONE;
@@ -158,10 +158,10 @@ void MapEditorObjects::SetObject(XMFLOAT3& position)
 	{
 		MapEditorObjects::goal.push_back(object);
 	}
-	else if (activeType == MapObjects::ENEMY)
+	/*else if (activeType == MapObjects::ENEMY)
 	{
 		MapEditorObjects::enemy.push_back(object);
-	}
+	}*/
 }
 
 void MapEditorObjects::SetObjectLine(XMFLOAT3& position)
@@ -242,15 +242,15 @@ void MapEditorObjects::OutputFile()
 		ofs << "goal " + itr->PositionToString() << std::endl;
 	}
 
-	for (auto itr = enemy.begin(); itr != enemy.end(); ++itr)
+	/*for (auto itr = enemy.begin(); itr != enemy.end(); ++itr)
 	{
 		ofs << "enemy " + itr->PositionToString() << std::endl;
-	}
+	}*/
 }
 
 void MapEditorObjects::DeleteObjects()
 {
 	wall.clear();
 	goal.clear();
-	enemy.clear();
+	//enemy.clear();
 }

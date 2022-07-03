@@ -6,10 +6,13 @@
 #include <dxgi1_6.h>
 #include <DirectXMath.h>
 #include <d3dcompiler.h>
+
+#pragma warning(push)
+#pragma warning(disable:26812)
 #include <DirectXTex.h>
-//#include "ResouceBarrier.h"
+#pragma warning(pop)
+
 #include "../BaseDirectX/Input.h"
-//#include "viewport.h"
 #include "../WindowsAPI/WinAPI.h"
 #include <wrl.h>
 #include <d3dx12.h>

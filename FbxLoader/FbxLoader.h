@@ -1,8 +1,16 @@
 ﻿#pragma once
+#pragma warning(push)
+#pragma warning(disable:26812)
+#pragma warning(disable:26495)
+#pragma warning(disable:26451)
 #include <fbxsdk.h>
+#pragma warning(pop)
+#pragma warning(push)
+#pragma warning(disable:6001)
+#include <d3dx12.h>
+#pragma warning(pop)
 #include <string>
 #include <d3d12.h>
-#include <d3dx12.h>
 #include "../FBXModel/FBXModel.h"
 
 class FbxLoader

@@ -169,7 +169,7 @@ void Imgui::EachInfo()
             touchedImgui = true;
         }
         ImGui::Text("");
-        ImGui::Text("1:WALL, 2:GOAL, 3:ENEMY, 0:NONE");
+        ImGui::Text("1:WALL, 2:GOAL,  0:NONE");
         if (MapEditorObjects::activeType == MapObjects::WALL)
         {
             ImGui::Text("ObjectType:WALL");
@@ -178,10 +178,10 @@ void Imgui::EachInfo()
         {
             ImGui::Text("ObjectType:GOAL");
         }
-        else if (MapEditorObjects::activeType == MapObjects::ENEMY)
+        /*else if (MapEditorObjects::activeType == MapObjects::ENEMY)
         {
             ImGui::Text("ObjectType:ENEMY");
-        }
+        }*/
         else
         {
             ImGui::Text("ObjectType:NOEN");
